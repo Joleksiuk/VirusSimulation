@@ -8,9 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "simulation",
-        uniqueConstraints = {
-                @UniqueConstraint(columnNames = "id")})
+@Table(name = "simulation")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -18,8 +16,9 @@ import javax.persistence.*;
 public class Simulation {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    Long id;
     String n; //simulation name
     Integer p; //population quantity
     Integer i; //initial quantity of sick

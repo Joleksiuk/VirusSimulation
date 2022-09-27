@@ -17,7 +17,8 @@ import javax.persistence.*;
 @Setter
 public class SimulationDay {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     Integer id;
     Integer simulationId;
     String simDate;
