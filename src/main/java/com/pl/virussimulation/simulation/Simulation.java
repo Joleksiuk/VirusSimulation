@@ -8,9 +8,9 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "players",
+@Table(name = "simulation",
         uniqueConstraints = {
-                @UniqueConstraint(columnNames = "nickname")})
+                @UniqueConstraint(columnNames = "id")})
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -29,4 +29,14 @@ public class Simulation {
     Integer tm; //avg days to die
     Integer ts; // time of simulation
 
+    public Simulation(String n, Integer p, Integer i, Integer r, Integer m, Integer ti, Integer tm, Integer ts) {
+        this.n = n;
+        this.p = p;
+        this.i = i;
+        this.r = r;
+        this.m = m;
+        this.ti = ti;
+        this.tm = tm;
+        this.ts = ts;
+    }
 }

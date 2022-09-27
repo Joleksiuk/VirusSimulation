@@ -1,4 +1,6 @@
 package com.pl.virussimulation.simulationDay;
 
-public interface SimulationDayRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface SimulationDayRepository extends CrudRepository<SimulationDay, Integer> {
 }
