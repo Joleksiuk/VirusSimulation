@@ -1,0 +1,28 @@
+<div class="container custom-container-2">
+
+    <div class="no-data text-center" *ngIf="Simulations.length == 0">
+      <p>There is no simulation added yet!</p>
+      <button class="btn btn-outline-primary" routerLink="/simform">
+        Add Simulation
+      </button>
+    </div>
+
+    <div *ngIf="Simulations.length !== 0">
+      <h3 class="mb-3 text-center">Simulation List</h3>
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Simulation name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let simulation of Simulations">
+              <td>{{ simulation.simName }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

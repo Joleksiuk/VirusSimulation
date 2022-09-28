@@ -19,14 +19,14 @@ public class SimulationDay {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    Integer id;
-    Integer simulationId;
+    Long id;
+    Long simulationId;
     String simDate;
     Integer n;
     Integer pi; //number of sick
     Integer pv; //number of infected
 
-    public SimulationDay(Integer simulationId, String simDate, Integer n, Integer pi, Integer pv, Integer pm, Integer pr) {
+    public SimulationDay(Long simulationId, String simDate, Integer n, Integer pi, Integer pv, Integer pm, Integer pr) {
         this.simulationId = simulationId;
         this.simDate = simDate;
         this.n = n;

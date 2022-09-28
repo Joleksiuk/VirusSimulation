@@ -27,4 +27,5 @@ public class SimulationDayService {
     public void deleteSimulationDayById(Integer id){
         simulationDayRepository.deleteById(id);
     }
+
 }

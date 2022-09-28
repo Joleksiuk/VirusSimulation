@@ -1,0 +1,38 @@
+<br>
+<div class = "simform">
+    
+    <div></div>
+    <div class ="simparam">      
+        <form>
+            <div class="form-group">
+              <input class="form-control"  [(ngModel)]="simDetails.SimName" type="text" id="SimName" placeholder="Enter simulation name">
+            </div>
+            <div class="form-group">
+              <input class="form-control"  [(ngModel)]="simDetails.populationQuantity " id="populationQuantity" type='number' min="0"  placeholder="Enter population quantity">
+            </div>
+              <div class="form-group">
+                <input class="form-control" [(ngModel)]="simDetails.initialSick "  id="initialSick" type='number' min="0"  placeholder="Enter initial number of sick">
+              </div>
+              <div class="form-group">
+                <input class="form-control" [(ngModel)]="simDetails.infectionRate " id="infectionRate" type='number' min="0"  placeholder="Enter infection rate">
+              </div>
+              <div class="form-group">
+                <input class="form-control" [(ngModel)]="simDetails.deathRate " id="deathRate" type='number' min="0" placeholder="Enter death rate">
+              </div>
+              <div class="form-group">
+                <input class="form-control" [(ngModel)]="simDetails.recoverDays " id="recoverDays" type='number' min="0" placeholder="Enter days to recover">
+              </div>
+              <div class="form-group">
+                <input class="form-control" [(ngModel)]="simDetails.deathDays " id="deathDays"  type='number' min="0"  placeholder="Enter days to die">
+              </div>
+              <div class="form-group">
+                <input class="form-control" [(ngModel)]="simDetails.simTime " id="simTime"  type='number'  min="0" placeholder="Enter time of simulation">
+              </div>
+              
+            <br>
+            <button class = "subButton" type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+    </div>
+    <div></div>
+</div>
