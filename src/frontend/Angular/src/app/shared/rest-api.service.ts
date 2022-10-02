@@ -8,7 +8,7 @@ import { retry, catchError } from 'rxjs/operators';
 })
 export class RestApiService {
   // Define API
-  apiURL = 'http://localhost:3000';
+  apiURL = 'http://localhost:8080';
   constructor(private http: HttpClient) {}
   /*========================================
     CRUD Methods for consuming RESTful API
@@ -33,6 +33,7 @@ export class RestApiService {
   }
   // HttpClient API post() method => Create simulation
   createSimulation(simulation: any): Observable<Simulation> {
+    console.log(simulation)
     return this.http
       .post<Simulation>(
         this.apiURL + '/simulation',

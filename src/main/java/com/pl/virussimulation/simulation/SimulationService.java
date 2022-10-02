@@ -1,5 +1,6 @@
 package com.pl.virussimulation.simulation;
 
+import com.pl.virussimulation.simulationDay.SimulationDayService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import java.util.List;
 public class SimulationService {
 
     private final  SimulationRepository simulationRepository;
-
+    private final SimulationDayService simulationDayService;
 
     public List<Simulation> findAllSimulations(){
         List<Simulation> simulations = new LinkedList<>();
@@ -20,10 +21,14 @@ public class SimulationService {
     }
 
     public void createSimulation(Simulation simulation){
+
         simulationRepository.save(simulation);
+        simulationDayService.generateSimulationDays(simulation);
     }
 
     public void deleteSimulationById(Integer id){
         simulationRepository.deleteById(id);
     }
+
+
 }

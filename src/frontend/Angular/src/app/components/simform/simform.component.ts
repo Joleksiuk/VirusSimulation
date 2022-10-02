@@ -11,8 +11,8 @@ export class SimformComponent implements OnInit {
 
  
   @Input() simDetails = { 
-    SimName: '', 
-    populationQuantity:0, 
+    SimName: 'la', 
+    populationQuantity:1, 
     initialSick:0,
     infectionRate:0,
     deathRate:0,
@@ -25,6 +25,7 @@ export class SimformComponent implements OnInit {
   
   ngOnInit() {}
   addSimulation(simData: any) {
+    console.log(simData)
     this.restApi.createSimulation(this.simDetails).subscribe((data: {}) => {
       this.router.navigate(['/simulation-list']);
     });

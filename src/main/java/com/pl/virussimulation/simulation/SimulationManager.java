@@ -1,15 +1,17 @@
-package com.pl.virussimulation;
+package com.pl.virussimulation.simulation;
 
 import com.pl.virussimulation.simulation.Simulation;
 import com.pl.virussimulation.simulationDay.SimulationDay;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 public class SimulationManager {
 
-    Simulation simulation;
-    List<SimulationDay> simDays =new ArrayList<SimulationDay>();
+    private Simulation simulation;
+    private List<SimulationDay> simDays =new ArrayList<SimulationDay>();
 
     public SimulationManager(Simulation simulation) {
         this.simulation = simulation;

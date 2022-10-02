@@ -22,13 +22,11 @@ public class SimulationDayController {
         return simulationDayService.findAllSimulationDays();
     }
 
+    @GetMapping("{id}")
+    public List<SimulationDay> getAllSimulationDaysBySimulationId(@PathVariable Long id){
+        return simulationDayService.findAllDaysBySimulationID(id);}
     @PostMapping
     public void createSimulationDay(@RequestBody SimulationDay simulationDay) {
         simulationDayService.createSimulationDay(simulationDay);
-    }
-
-    @DeleteMapping("{id}")
-    public void deleteSimulationDay(@PathVariable Integer id) {
-        simulationDayService.deleteSimulationDayById(id);
     }
 }
