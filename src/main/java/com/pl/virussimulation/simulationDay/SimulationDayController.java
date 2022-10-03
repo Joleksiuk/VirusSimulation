@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("simulation_day")
+@RequestMapping("simulationday")
 public class SimulationDayController {
 
     private final SimulationDayService simulationDayService;

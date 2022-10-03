@@ -2,6 +2,7 @@ package com.pl.virussimulation.simulation;
 
 import com.pl.virussimulation.simulationDay.SimulationDayService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;

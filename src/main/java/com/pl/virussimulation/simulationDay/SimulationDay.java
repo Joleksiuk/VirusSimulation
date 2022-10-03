@@ -6,11 +6,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Entity
-@Table(name = "simulation_day",
-        uniqueConstraints = {
-                @UniqueConstraint(columnNames = "id")})
+@Table(name = "simulation_day")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -21,14 +22,14 @@ public class SimulationDay {
     @Column(name = "id")
     Long id;
     Long simulationId;
-    String simDate;
     Integer n;
     Integer pi; //number of sick
     Integer pv; //number of infected
+    Integer pm; //number of deaths
+    Integer pr; //number of recovered
 
-    public SimulationDay(Long simulationId, String simDate, Integer n, Integer pi, Integer pv, Integer pm, Integer pr) {
+    public SimulationDay(Long simulationId, Integer n, Integer pi, Integer pv, Integer pm, Integer pr) {
         this.simulationId = simulationId;
-        this.simDate = simDate;
         this.n = n;
         this.pi = pi;
         this.pv = pv;
@@ -36,6 +37,4 @@ public class SimulationDay {
         this.pr = pr;
     }
 
-    Integer pm; //number of deaths
-    Integer pr; //number of recovered
 }
