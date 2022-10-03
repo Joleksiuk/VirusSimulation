@@ -4,7 +4,7 @@ import { SimformComponent } from './components/simform/simform.component';
 import { SimulationDataComponent } from './components/simulation-data/simulation-data.component';
 
 const routes: Routes = [
-  { path:'simulation', component:SimformComponent },
+  { path:'sim', component:SimformComponent },
   { path:'data', component:SimulationDataComponent}
 ];
 

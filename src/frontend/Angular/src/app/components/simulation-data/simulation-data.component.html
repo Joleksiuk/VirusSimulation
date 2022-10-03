@@ -1,29 +1,42 @@
 <div class="container custom-container-2">
 
   </div>
-    <div class="no-data text-center" *ngIf="Simulations.length == 0">
+    <div class="no-data text-center" *ngIf="simData.length == 0">
       <p>There is no simulation added yet!</p>
       <button class="btn btn-outline-primary" routerLink="/simform">
         Add Simulation
       </button>
     </div>
 
-    <div *ngIf="Simulations.length !== 0">
+    <div *ngIf="simData.length !== 0">
       <h3 class="mb-3 text-center">Simulation Data</h3>
       <div class="col-md-12">
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th scope="col">Simulation name</th>
+              <th scope="col">n</th>
+              <th scope="col">pi</th>
+              <th scope="col">pv</th>
+              <th scope="col">pm</th>
+              <th scope="col">pr</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let simulation of Simulations">
-              <td>{{ simulation.simName }}</td>
+            <tr *ngFor="let day of simData">
+              <td>{{ day.n }}</td>
+              <td>{{ day.pi }}</td>
+              <td>{{ day.pv }}</td>
+              <td>{{ day.pm }}</td>
+              <td>{{ day.pr }} </td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
+
+
+    <div>
+      <canvasjs-chart [options]="chartOptions" [styles]="{width: '100%', height:'360px'}" (chartInstance)="getChartInstance($event)"></canvasjs-chart>    
+    </div>    
 
   
