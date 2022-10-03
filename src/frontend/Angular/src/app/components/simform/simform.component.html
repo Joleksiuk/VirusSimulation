@@ -5,28 +5,28 @@
     <div class ="simparam">      
         <div>
             <div class="form-group">
-              <input class="form-control"  [(ngModel)]="simDetails.SimName" type="text" id="SimName" placeholder="Enter simulation name">
+              <input class="form-control"  [(ngModel)]="simDetails.n" type="text" id="n" placeholder="Enter simulation name">
             </div>
             <div class="form-group">
-              <input class="form-control"  [(ngModel)]="simDetails.populationQuantity " id="populationQuantity" type='number' min="0"  placeholder="Enter population quantity">
+              <input class="form-control"  [(ngModel)]="simDetails.p " id="p" type='number' min="0"  placeholder="Enter population quantity">
             </div>
               <div class="form-group">
-                <input class="form-control" [(ngModel)]="simDetails.initialSick "  id="initialSick" type='number' min="0"  placeholder="Enter initial number of sick">
+                <input class="form-control" [(ngModel)]="simDetails.i "  id="i" type='number' min="0"  placeholder="Enter initial number of sick">
               </div>
               <div class="form-group">
-                <input class="form-control" [(ngModel)]="simDetails.infectionRate " id="infectionRate" type='number' min="0"  placeholder="Enter infection rate">
+                <input class="form-control" [(ngModel)]="simDetails.r " id="r" type='number' min="0"  placeholder="Enter infection rate">
               </div>
               <div class="form-group">
-                <input class="form-control" [(ngModel)]="simDetails.deathRate " id="deathRate" type='number' min="0" placeholder="Enter death rate">
+                <input class="form-control" [(ngModel)]="simDetails.m " id="m" type='number' min="0" placeholder="Enter death rate">
               </div>
               <div class="form-group">
-                <input class="form-control" [(ngModel)]="simDetails.recoverDays " id="recoverDays" type='number' min="0" placeholder="Enter days to recover">
+                <input class="form-control" [(ngModel)]="simDetails.ti " id="ti" type='number' min="0" placeholder="Enter days to recover">
               </div>
               <div class="form-group">
-                <input class="form-control" [(ngModel)]="simDetails.deathDays " id="deathDays"  type='number' min="0"  placeholder="Enter days to die">
+                <input class="form-control" [(ngModel)]="simDetails.tm " id="tm"  type='number' min="0"  placeholder="Enter days to die">
               </div>
               <div class="form-group">
-                <input class="form-control" [(ngModel)]="simDetails.simTime " id="simTime"  type='number'  min="0" placeholder="Enter time of simulation">
+                <input class="form-control" [(ngModel)]="simDetails.ts " id="ts"  type='number'  min="0" placeholder="Enter time of simulation">
               </div>
               
             <br>

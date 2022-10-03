@@ -31,7 +31,8 @@ export class RestApiService {
   }
 
   createSimulation(simulation: Simulation): Observable<Simulation> {
-    console.log(simulation)
+    //console.log(simulation)
+    console.log(JSON.stringify(simulation))
     return this.http
       .post<Simulation>(
         this.apiURL + '/simulation',
