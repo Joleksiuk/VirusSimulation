@@ -3,22 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule , routingComponents} from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SimformComponent } from './components/simform/simform.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SimulationDataComponent as SimulationDataComponent } from './components/simulation-data/simulation-data.component';
-import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [
-  { path: '/simData', component: SimulationDataComponent, }
-];
 
 @NgModule({
   declarations: [
     AppComponent,
-    SimformComponent,
-    SimulationDataComponent,
+    routingComponents
   ],
   imports: [
     BrowserModule,
@@ -27,8 +19,6 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
-
     
   ],
   providers: [],
