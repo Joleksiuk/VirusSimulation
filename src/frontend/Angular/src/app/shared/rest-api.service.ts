@@ -7,32 +7,30 @@ import { retry, catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class RestApiService {
-  // Define API
+
   apiURL = 'http://localhost:8080';
   constructor(private http: HttpClient) {}
-  /*========================================
-    CRUD Methods for consuming RESTful API
-  =========================================*/
-  // Http Options
+
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     }),
   };
-  // HttpClient API get() method => Fetch simulation list
+
   getSimulations(): Observable<Simulation> {
     return this.http
       .get<Simulation>(this.apiURL + '/simulation')
       .pipe(retry(1), catchError(this.handleError));
   }
-  // HttpClient API get() method => Fetch simulation
+
   getSimulation(id: any): Observable<Simulation> {
     return this.http
       .get<Simulation>(this.apiURL + '/simulation/' + id)
       .pipe(retry(1), catchError(this.handleError));
   }
-  // HttpClient API post() method => Create simulation
-  createSimulation(simulation: any): Observable<Simulation> {
+
+  createSimulation(simulation: Simulation): Observable<Simulation> {
     console.log(simulation)
     return this.http
       .post<Simulation>(
@@ -40,7 +38,7 @@ export class RestApiService {
         JSON.stringify(simulation),
         this.httpOptions
       )
-      .pipe(retry(1), catchError(this.handleError));
+      .pipe(retry(0), catchError(this.handleError));
   }
   // HttpClient API put() method => Update employee
   updateSimulation(id: any, simulation: any): Observable<Simulation> {
