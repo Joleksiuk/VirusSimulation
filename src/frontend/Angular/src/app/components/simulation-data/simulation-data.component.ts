@@ -3,19 +3,19 @@ import { RestApiService } from 'src/app/shared/rest-api.service';
 
 @Component({
   selector: 'app-simulation-list',
-  templateUrl: './simulation-list.component.html',
-  styleUrls: ['./simulation-list.component.css']
+  templateUrl: './simulation-data.component.html',
+  styleUrls: ['./simulation-data.component.css']
 })
-export class SimulationListComponent implements OnInit {
+export class SimulationDataComponent implements OnInit {
 
   Simulations: any=[];
   constructor(public restApi: RestApiService) { }
 
   ngOnInit(): void {
-    this.loadSimulations();
+    this.loadSimulationData();
   }
-  loadSimulations() {
-    return this.restApi.getSimulations().subscribe((data: {}) => {
+  loadSimulationData() {
+    return this.restApi.getSimDaysBySimId(1).subscribe((data: {}) => {
       this.Simulations = data;
     });
   }

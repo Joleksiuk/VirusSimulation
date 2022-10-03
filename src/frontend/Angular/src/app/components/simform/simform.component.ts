@@ -26,7 +26,7 @@ export class SimformComponent implements OnInit {
   ngOnInit() {}
   addSimulation(simData: any) {
     this.restApi.createSimulation(simData).subscribe((data: {}) => {
-      //this.router.navigate(['/simulation-list']);
+      this.router.navigate(['/simulation-data']);
     });
   }
 

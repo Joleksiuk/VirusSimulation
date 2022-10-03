@@ -7,14 +7,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SimformComponent } from './components/simform/simform.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SimulationListComponent } from './components/simulation-list/simulation-list.component';
+import { SimulationDataComponent as SimulationDataComponent } from './components/simulation-data/simulation-data.component';
+import { RouterModule, Routes } from '@angular/router';
 
+const routes: Routes = [
+  { path: '/simData', component: SimulationDataComponent, }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     SimformComponent,
-    SimulationListComponent,
+    SimulationDataComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,8 +27,13 @@ import { SimulationListComponent } from './components/simulation-list/simulation
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    RouterModule.forRoot(routes)
+
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
+
+  
 })
 export class AppModule { }

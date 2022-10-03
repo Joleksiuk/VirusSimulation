@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Simulation } from '../shared/simulation';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { SimulationDay } from './simulationDay';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -17,6 +19,13 @@ export class RestApiService {
       'Content-Type': 'application/json',
     }),
   };
+
+  getSimDaysBySimId(id:number):Observable<SimulationDay>{
+
+    return this.http
+      .get<SimulationDay>(this.apiURL + '/simulationday/'+id)
+      .pipe(retry(1), catchError(this.handleError));
+  }
 
   getSimulations(): Observable<Simulation> {
     return this.http
