@@ -5,7 +5,7 @@ import { SimulationDataComponent } from './components/simulation-data/simulation
 
 const routes: Routes = [
   { path:'sim', component:SimformComponent },
-  { path:'data', component:SimulationDataComponent}
+  { path:'data/:msg', component:SimulationDataComponent}
 ];
 
 @NgModule({

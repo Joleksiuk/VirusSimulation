@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -31,5 +32,8 @@ public class SimulationService {
         simulationRepository.deleteById(id);
     }
 
+    public Simulation findSimulationByName(String name){
+        return simulationRepository.findSimulationByN(name);
+    }
 
 }

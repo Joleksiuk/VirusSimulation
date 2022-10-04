@@ -23,9 +23,10 @@ public class SimulationDayController {
         return simulationDayService.findAllSimulationDays();
     }
 
-    @GetMapping("{id}")
-    public List<SimulationDay> getAllSimulationDaysBySimulationId(@PathVariable Long id){
-        return simulationDayService.findAllDaysBySimulationID(id);}
+    @GetMapping("{name}")
+    public List<SimulationDay> getAllSimulationDaysBySimulationName(@PathVariable String name){
+        return simulationDayService.findAllDaysBySimulationName(name);}
+
     @PostMapping
     public void createSimulationDay(@RequestBody SimulationDay simulationDay) {
         simulationDayService.createSimulationDay(simulationDay);

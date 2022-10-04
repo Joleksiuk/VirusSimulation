@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { RestApiService } from 'src/app/shared/rest-api.service';
 import { SimulationDay } from 'src/app/shared/simulationDay';
 
@@ -15,16 +16,24 @@ export class SimulationDataComponent implements OnInit {
   pm: any  =[];
   pr: any=[];
 
+  simName:any="";
+  simulation:any;
 
-  constructor(public restApi: RestApiService) { }
+  constructor(public restApi: RestApiService, private route:ActivatedRoute) {
+    this.simName = this.route.snapshot.paramMap.get("msg"); 
+    console.log(this.simName)
+   }
 
   ngOnInit(): void {
+    console.log("gnOnInit")
     this.loadSimulationData();
+
   }
 
   loadSimulationData() {
-    return this.restApi.getSimDaysBySimId(141).subscribe((data: {}) => {
+    return this.restApi.getSimDaysBySimName(this.simName).subscribe((data: {}) => {
       this.simData = data;
+      console.log(data)
       this.loadArrays();
    
     });
@@ -37,10 +46,10 @@ export class SimulationDataComponent implements OnInit {
   loadArrays(){
     console.log(this.simData)
     this.simData.forEach((element: SimulationDay)=> {
-      this.pi.push({ x: element.pi , y: element.n });
-      this.pv.push({ x: element.pv , y: element.n });
-      this.pm.push({ x: element.pm , y: element.n });
-      this.pr.push({ x: element.pr , y: element.n });  
+      this.pi.push({ x: element.n , y: element.pi });
+      this.pv.push({ x: element.n , y: element.pv });
+      this.pm.push({ x: element.n , y: element.pm });
+      this.pr.push({ x: element.n , y: element.pr });  
     });
     this.chart.render();
   }

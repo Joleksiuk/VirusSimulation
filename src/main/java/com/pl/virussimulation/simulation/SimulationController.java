@@ -11,7 +11,6 @@ import java.util.List;
 public class SimulationController {
 
     private final SimulationService simulationService;
-
     @Autowired
     public SimulationController(SimulationService simulationService){this.simulationService = simulationService;}
 
@@ -19,7 +18,10 @@ public class SimulationController {
     public List<Simulation> getAllSimulations() {
         return simulationService.findAllSimulations();
     }
-
+    @GetMapping("{name}")
+    public  Simulation getSimulationByName(@RequestBody String name){
+        return simulationService.findSimulationByName(name);
+    }
     @PostMapping
     public void createSimulation(@RequestBody Simulation simulation) {
         simulationService.createSimulation(simulation);

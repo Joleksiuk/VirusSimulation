@@ -20,11 +20,16 @@ export class RestApiService {
     }),
   };
 
-  getSimDaysBySimId(id:number):Observable<SimulationDay>{
+  getSimDaysBySimName(name:String):Observable<SimulationDay>{
 
     return this.http
-      .get<SimulationDay>(this.apiURL + '/simulationday/'+id)
+      .get<SimulationDay>(this.apiURL + '/simulationday/'+name)
       .pipe(retry(1), catchError(this.handleError));
+  }
+
+  getSimulationByName(name:String):Observable<Simulation>{
+    return this.http.get<Simulation>(this.apiURL+'/simulation/'+name)
+    .pipe(retry(1), catchError(this.handleError));
   }
 
   getSimulations(): Observable<Simulation> {
