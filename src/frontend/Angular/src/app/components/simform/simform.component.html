@@ -5,27 +5,35 @@
     <div class ="simparam">      
         <div>
             <div class="form-group">
+              <h5>Simulation name</h5>
               <input class="form-control"  [(ngModel)]="simDetails.n" type="text" id="n" placeholder="Enter simulation name">
             </div>
             <div class="form-group">
+              <h5>Population</h5>
               <input class="form-control"  [(ngModel)]="simDetails.p " id="p" type='number' min="0"  placeholder="Enter population quantity">
             </div>
               <div class="form-group">
+                <h5>Initial number of sick</h5>
                 <input class="form-control" [(ngModel)]="simDetails.i "  id="i" type='number' min="0"  placeholder="Enter initial number of sick">
               </div>
               <div class="form-group">
+                <h5>Infection rate</h5>
                 <input class="form-control" [(ngModel)]="simDetails.r " id="r" type='number' min="0"  placeholder="Enter infection rate">
               </div>
               <div class="form-group">
+                <h5>Death rate</h5>
                 <input class="form-control" [(ngModel)]="simDetails.m " id="m" type='number' min="0" placeholder="Enter death rate">
               </div>
               <div class="form-group">
+                <h5>Days to recovery</h5>
                 <input class="form-control" [(ngModel)]="simDetails.ti " id="ti" type='number' min="0" placeholder="Enter days to recover">
               </div>
               <div class="form-group">
+                <h5>Days to die</h5>
                 <input class="form-control" [(ngModel)]="simDetails.tm " id="tm"  type='number' min="0"  placeholder="Enter days to die">
               </div>
               <div class="form-group">
+                <h5>Simulation time</h5>
                 <input class="form-control" [(ngModel)]="simDetails.ts " id="ts"  type='number'  min="0" placeholder="Enter time of simulation">
               </div>
               
